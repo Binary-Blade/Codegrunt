@@ -3,7 +3,7 @@ import os
 
 
 class PathManager:
-    current_exercise_file_path = None
+    __current_exercise_file_path = None
 
     def __init__(self):
         self.directory_manager = DirectoryManager()
@@ -11,12 +11,12 @@ class PathManager:
     @staticmethod
     def set_current_exercise_path(path: str):
         # Set the path for the current exercise file.
-        PathManager.current_exercise_file_path = path
+        PathManager.__current_exercise_file_path = path
 
     @staticmethod
     def get_current_exercise_path() -> str | None:
         # Get the path for the current exercise file.
-        return PathManager.current_exercise_file_path
+        return PathManager.__current_exercise_file_path
 
     @staticmethod
     def get_evaluated_file_path(file_path: str) -> str:
